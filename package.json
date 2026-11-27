@@ -2,17 +2,20 @@
   "name": "jeomgeom-note",
   "version": "0.0.0",
   "private": true,
-  "type": "module",
   "scripts": {
     "dev": "concurrently --kill-others --names web,api \"npm:dev:web\" \"npm:dev:api\"",
     "dev:web": "vite",
     "dev:api": "node server/index.js",
+    "start": "node server/index.js",
+    "vision:check": "node test-vision.mjs",
     "build": "tsc --noEmit && vite build",
     "test": "vitest run"
   },
   "dependencies": {
-    "qrcode.react": "^4.2.0",
+    "dotenv": "^16.4.7",
     "express": "^5.1.0",
+    "openai": "^4.77.0",
+    "qrcode.react": "^4.2.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },

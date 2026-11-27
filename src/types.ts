@@ -46,6 +46,7 @@ export interface InspectResult {
   changes: Omit<Change, "zoneId">[];
   uncertain: string[];
   note: string;
+  fallback?: boolean;
 }
 
 export interface RouteResult {
@@ -79,4 +80,5 @@ export interface GuestSummary {
 export interface NoticeResult {
   listing: string;
   checkin: string;
+  fallback?: boolean;
 }

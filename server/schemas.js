@@ -36,7 +36,7 @@ const INSPECT_SCHEMA = {
       },
       required: ["object", "change", "where", "check", "priority"], additionalProperties: false,
     } },
-    uncertain: { type: "boolean" }, note: { type: "string" },
+    uncertain: { type: "array", items: { type: "string" } }, note: { type: "string" },
   },
   required: ["personVisible", "coverage", "changes", "uncertain", "note"],
   additionalProperties: false,
