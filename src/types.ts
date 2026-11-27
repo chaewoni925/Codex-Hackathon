@@ -9,6 +9,7 @@ export interface Space {
   name: string;
   zones: Zone[];
   route: RouteStep[];
+  routeFallback?: boolean;
 }
 
 export interface Zone {

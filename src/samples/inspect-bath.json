@@ -1,0 +1,12 @@
+{
+  "personVisible": false,
+  "coverage": [
+    { "spotId": "bath-1", "covered": true }, { "spotId": "bath-2", "covered": true },
+    { "spotId": "bath-3", "covered": true }, { "spotId": "bath-4", "covered": true }
+  ],
+  "changes": [
+    { "object": "수건", "change": "위치 바뀜", "where": "선반 아래", "check": "수건이 놓인 위치를 확인해요", "priority": "보통" }
+  ],
+  "uncertain": [],
+  "note": ""
+}

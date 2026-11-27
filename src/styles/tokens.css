@@ -1,0 +1,27 @@
+:root {
+  color-scheme: light;
+  font-family: system-ui, sans-serif;
+  font-size: 16px;
+  color: #1b1f2a;
+  background: #ffffff;
+  --color-background: #ffffff;
+  --color-surface-muted: #f5f6f8;
+  --color-text: #1b1f2a;
+  --color-text-muted: #5b6272;
+  --color-border: #e3e6ec;
+  --color-point: #1f3a8a;
+  --color-warning: #d97706;
+  --color-danger: #dc2626;
+  --font-body: system-ui, sans-serif;
+  --font-size-body: 16px;
+  --font-size-support: 14px;
+  --font-size-title: 20px;
+  --font-weight-title: 600;
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --radius-card: 12px;
+  --app-max-width: 430px;
+  --app-inline-padding: 16px;
+}

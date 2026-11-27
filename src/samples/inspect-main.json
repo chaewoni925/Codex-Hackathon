@@ -1,0 +1,13 @@
+{
+  "personVisible": false,
+  "coverage": [
+    { "spotId": "main-1", "covered": true }, { "spotId": "main-2", "covered": true },
+    { "spotId": "main-3", "covered": false }, { "spotId": "main-4", "covered": true },
+    { "spotId": "main-5", "covered": true }
+  ],
+  "changes": [
+    { "object": "쿠션", "change": "새로 생김", "where": "소파 오른쪽", "check": "소파 주변에 남겨진 물건인지 확인해요", "priority": "높음" }
+  ],
+  "uncertain": [],
+  "note": ""
+}

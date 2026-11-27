@@ -1,0 +1,18 @@
+.results { display: grid; gap: 10px; }
+.results h3 { margin: 0; font-size: 16px; }
+.analyzing { display: grid; gap: 8px; }
+.analyzing p { margin: 0; color: #5b6272; font-size: 14px; }
+.skeleton { height: 76px; border-radius: 12px; background: linear-gradient(90deg,#f5f6f8,#e3e6ec,#f5f6f8); background-size: 200% 100%; animation: shimmer 1.2s infinite; }
+@keyframes shimmer { to { background-position: -200% 0; } }
+.person, .uncertain { display: grid; gap: 8px; padding: 12px; border: 1px solid #dc2626; border-radius: 12px; color: #dc2626; background: #fef2f2; }
+.person p, .uncertain p { margin: 0; }
+.uncertain { border-color: #d97706; color: #8a4b00; background: #fff7ed; }
+.changeCard, .missing { display: grid; gap: 8px; }
+.changeCard p, .missing p { margin: 0; }
+.newChange { border-color: #d97706; }
+.alert { border-color: #d97706; box-shadow: 0 0 0 1px #d97706; }
+.check { padding-left: 8px; border-left: 3px solid #1f3a8a; }
+.actions { display: flex; gap: 8px; }
+.actions button { flex: 1; }
+.empty { margin: 0; color: #5b6272; font-size: 14px; line-height: 1.5; }
+.missing { border-color: #d97706; }

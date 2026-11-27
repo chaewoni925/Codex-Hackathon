@@ -1,0 +1,4 @@
+.badge { display: inline-flex; align-items: center; min-height: 24px; padding: 2px 8px; border-radius: 999px; background: #f5f6f8; color: #5b6272; font-size: 14px; }
+.point { background: #e9edf7; color: #1f3a8a; }
+.warning { background: #fff4e5; color: #d97706; }
+.danger { background: #fef2f2; color: #dc2626; }

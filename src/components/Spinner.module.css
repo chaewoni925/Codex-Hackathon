@@ -1,0 +1,5 @@
+.spinner { display: inline-flex; align-items: center; gap: 8px; }
+.ring { width: 18px; height: 18px; border: 2px solid #e3e6ec; border-top-color: #1f3a8a; border-radius: 50%; animation: spin .8s linear infinite; }
+.label { font-size: 14px; }
+@keyframes spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .ring { animation-duration: 2s; } }
