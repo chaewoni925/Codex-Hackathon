@@ -1,0 +1,95 @@
+{
+  "personVisible": false,
+  "route": [
+    {
+      "order": 1,
+      "zoneId": "zone-main",
+      "spotId": "s1",
+      "object": "연기감지기",
+      "where": "메인룸 출입문 쪽 천장",
+      "reason": "천장에 고정된 물체의 앞면과 테두리를 살펴볼 수 있어요.",
+      "check": "손전등을 비춰 렌즈처럼 반짝이는 점이 있는지 확인하세요.",
+      "priority": "높음"
+    },
+    {
+      "order": 2,
+      "zoneId": "zone-main",
+      "spotId": "s2",
+      "object": "벽시계",
+      "where": "출입문에서 오른쪽 벽 위쪽",
+      "reason": "벽에 걸린 물체의 앞면과 테두리를 살펴볼 수 있어요.",
+      "check": "시계 앞면과 테두리를 손전등으로 비춰 작은 구멍이나 반짝임이 있는지 확인하세요.",
+      "priority": "보통"
+    },
+    {
+      "order": 3,
+      "zoneId": "zone-main",
+      "spotId": "s3",
+      "object": "TV 셋톱박스",
+      "where": "TV 아래 선반",
+      "reason": "전자기기 외부와 연결부를 가까이서 살펴볼 수 있어요.",
+      "check": "셋톱박스의 앞면과 연결부에 작은 구멍이나 낯선 부착물이 있는지 확인하세요.",
+      "priority": "보통"
+    },
+    {
+      "order": 4,
+      "zoneId": "zone-main",
+      "spotId": "s4",
+      "object": "콘센트",
+      "where": "침대 옆 벽 아래쪽",
+      "reason": "침대 가까이에 있어 주변을 자세히 살펴볼 지점이에요.",
+      "check": "콘센트 주변과 꽂힌 기기를 손전등으로 비춰 작은 구멍이 있는지 확인하세요.",
+      "priority": "높음"
+    },
+    {
+      "order": 5,
+      "zoneId": "zone-main",
+      "spotId": "s5",
+      "object": "액자",
+      "where": "침대 맞은편 벽",
+      "reason": "침대 쪽을 향한 액자의 앞면과 테두리를 살펴볼 수 있어요.",
+      "check": "액자 앞면과 테두리를 손전등으로 비춰 렌즈처럼 반짝이는 점이 있는지 확인하세요.",
+      "priority": "높음"
+    },
+    {
+      "order": 6,
+      "zoneId": "zone-main",
+      "spotId": "s6",
+      "object": "에어컨",
+      "where": "메인룸 안쪽 벽 위",
+      "reason": "높은 위치의 외부와 통풍구를 살펴볼 수 있어요.",
+      "check": "에어컨 외부와 통풍구를 손전등으로 비춰 작은 구멍이나 반짝임이 있는지 확인하세요.",
+      "priority": "보통"
+    },
+    {
+      "order": 7,
+      "zoneId": "zone-bath",
+      "spotId": "s7",
+      "object": "욕실 환풍구",
+      "where": "욕실 문 안쪽 천장",
+      "reason": "샤워 공간을 향한 천장 부위를 살펴볼 수 있어요.",
+      "check": "환풍구 주변과 안쪽을 손전등으로 비춰 렌즈처럼 반짝이는 점이 있는지 확인하세요.",
+      "priority": "높음"
+    },
+    {
+      "order": 8,
+      "zoneId": "zone-bath",
+      "spotId": "s8",
+      "object": "거울",
+      "where": "세면대 위 벽",
+      "reason": "세면 공간을 향한 거울의 앞면과 테두리를 살펴볼 수 있어요.",
+      "check": "거울 앞면과 테두리를 손전등으로 비춰 작은 구멍이나 반짝임이 있는지 확인하세요.",
+      "priority": "높음"
+    },
+    {
+      "order": 9,
+      "zoneId": "zone-bath",
+      "spotId": "s9",
+      "object": "휴지걸이",
+      "where": "변기 옆 벽",
+      "reason": "벽에 부착된 물체의 앞면과 아래쪽을 살펴볼 수 있어요.",
+      "check": "휴지걸이의 앞면과 아래쪽을 손전등으로 비춰 작은 구멍이 있는지 확인하세요.",
+      "priority": "보통"
+    }
+  ]
+}
