@@ -2,19 +2,27 @@ const fs = require("node:fs");
 const path = require("node:path");
 const express = require("express");
 const { clean } = require("./clean");
-const { callVision } = require("./openai");
-const { PROMPT_A, PROMPT_B, PROMPT_C, PROMPT_INSPECT, PROMPT_NOTICE } = require("./prompts");
-const { ROUTE_SCHEMA, INSPECT_SCHEMA, NOTICE_SCHEMA } = require("./schemas");
+const { callVision: callOpenAI } = require("../ai/openai");
+const { callGemini } = require("../ai/gemini");
+const { PROMPT_A, PROMPT_B, PROMPT_C, PROMPT_INSPECT, PROMPT_NOTICE } = require("../ai/prompts");
+const { ROUTE_SCHEMA, INSPECT_SCHEMA, NOTICE_SCHEMA } = require("../ai/schemas");
 
 loadEnvFile(path.resolve(__dirname, "../.env"));
 const app = express();
 app.use(express.json({ limit: "20mb" }));
 
-const readSample = (name) => JSON.parse(fs.readFileSync(path.resolve(__dirname, `../samples/${name}`), "utf8"));
-const canCallOpenAI = () => process.env.MOCK === "0" && Boolean(process.env.OPENAI_API_KEY);
+const readSample = (name) => JSON.parse(fs.readFileSync(path.resolve(__dirname, `../ai/samples/${name}`), "utf8"));
+const provider = () => (process.env.AI_PROVIDER || "openai").trim().toLowerCase();
+const canCallAI = () => process.env.MOCK === "0" && (
+  provider() === "gemini" ? Boolean(process.env.GEMINI_API_KEY) :
+  provider() === "openai" ? Boolean(process.env.OPENAI_API_KEY) :
+  false
+);
 const callConfigured = (options) => {
   if (!options.system || !options.schema) throw new Error("프롬프트 또는 JSON Schema가 아직 설정되지 않았습니다.");
-  return callVision(options);
+  if (provider() === "gemini") return callGemini(options);
+  if (provider() === "openai") return callOpenAI(options);
+  throw new Error(`지원하지 않는 AI_PROVIDER입니다: ${provider()}`);
 };
 const sendClean = (res, body) => res.json(clean(body));
 
@@ -40,16 +48,16 @@ function cleanNotice(value) {
 function mapRouteResult(result, zones) {
   if (result.personVisible) return { personVisible: true, route: [] };
   const requestedZones = Array.isArray(zones) ? zones : [];
-  const firstZoneId = requestedZones[0]?.zoneId ?? "";
+
   return {
     personVisible: false,
-    route: (result.route ?? []).map((step, index) => {
+    route: (result.route ?? []).filter(step => requestedZones.length === 1 || requestedZones.some(zone => zone.name === step.zone)).map((step, index) => {
       const matchedZone = requestedZones.find((zone) => zone.name === step.zone);
       const { zone, ...routeStep } = step;
       return {
         ...routeStep,
         order: index + 1,
-        zoneId: matchedZone?.zoneId ?? firstZoneId,
+        zoneId: matchedZone?.zoneId ?? requestedZones[0].zoneId,
         spotId: `s${index + 1}`,
       };
     }),
@@ -121,14 +129,8 @@ app.post("/api/route", async (req, res) => {
   }
   return respond({
     api: "POST /api/route", res, fallback,
-    transform: (result) => {
-      const mapped = mapRouteResult(result, zones);
-      if (!mapped.personVisible && mapped.route.length < 5) {
-        throw new Error("AI 점검 동선이 최소 지점 수를 충족하지 못했습니다.");
-      }
-      return mapped;
-    },
-    run: canCallOpenAI()
+    transform: (result) => mapRouteResult(result, zones),
+    run: canCallAI()
       ? () => callConfigured({ system: PROMPT_A, content, schema: ROUTE_SCHEMA })
       : null,
   });
@@ -152,7 +154,7 @@ app.post("/api/inspect", async (req, res) => {
   return respond({
     api: "POST /api/inspect", res, fallback,
     transform: (result) => normalizeInspectResult(result, spots),
-    run: !mockPerson && canCallOpenAI()
+    run: !mockPerson && canCallAI()
       ? () => callConfigured({ system: PROMPT_B, content, schema: INSPECT_SCHEMA })
       : null,
   });
@@ -165,7 +167,7 @@ app.post("/api/notice", async (req, res) => {
   return respond({
     api: "POST /api/notice", res, fallback,
     transform: cleanNotice,
-    run: canCallOpenAI()
+    run: canCallAI()
       ? () => callConfigured({ system: PROMPT_C, content, schema: NOTICE_SCHEMA })
       : null,
   });

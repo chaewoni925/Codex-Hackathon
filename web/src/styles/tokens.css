@@ -1,0 +1,30 @@
+:root {
+  color-scheme: light;
+  --font-body: system-ui, -apple-system, "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+  --font-size-body: 16px;
+  --font-size-support: 14px;
+  --font-size-title: 20px;
+  --font-weight-title: 700;
+  --color-canvas: #f0eff3;
+  --color-background: #faf8ff;
+  --color-surface: #ffffff;
+  --color-surface-muted: #f4f1fa;
+  --color-text: #17182c;
+  --color-text-muted: #595972;
+  --color-border: #d6d3e4;
+  --color-point: #29358a;
+  --color-point-soft: #dedfff;
+  --color-warning: #9d3415;
+  --color-danger: #ad2821;
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --radius-card: 20px;
+  --app-max-width: 410px;
+  --app-inline-padding: clamp(12px, 5vw, 20px);
+  font-family: var(--font-body);
+  font-size: var(--font-size-body);
+  color: var(--color-text);
+  background: var(--color-canvas);
+}

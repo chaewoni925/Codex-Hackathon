@@ -1,0 +1,25 @@
+@import './styles/tokens.css';
+
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; }
+#root {
+  width: 100%;
+  max-width: var(--app-max-width);
+  min-height: 100dvh;
+  margin-inline: auto;
+  background: var(--color-background);
+  line-height: 1.5;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+  -webkit-font-smoothing: antialiased;
+}
+@media (min-width: 430px) {
+  #root { box-shadow: 0 0 0 1px #dedbe7, 0 4px 24px #24213c0b; }
+}
+main { min-width: 0; }
+button, input, select, textarea { color: inherit; font: inherit; }
+button { -webkit-tap-highlight-color: transparent; }
+:where(button, a, input, select, textarea, [tabindex]):focus-visible {
+  outline: 3px solid #595ec9;
+  outline-offset: 3px;
+}

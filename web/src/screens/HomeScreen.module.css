@@ -1,0 +1,37 @@
+.home {
+  --home-ink: #15152c;
+  --home-accent: #29348a;
+  --home-line: #d7d3e6;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  width: 100%;
+  max-width: var(--app-max-width, 430px);
+  min-height: 100dvh;
+  margin-inline: auto;
+  padding: 24px 20px max(32px, env(safe-area-inset-bottom));
+  color: var(--home-ink);
+  background: #fbf8ff;
+  word-break: keep-all;
+}
+.header p, .feature p, .space p { margin: 0; }
+.brand { display: flex; align-items: center; gap: 9px; }
+.mark, .featureIcon { display: grid; flex-shrink: 0; place-items: center; }
+.mark { width: 38px; height: 38px; color: white; background: var(--home-accent); }
+.tag { padding: 6px 13px; border-radius: 999px; background: #d8d8ff; font-size: 13px; line-height: 1.25; font-weight: 600; }
+.header h1 { margin: 24px 0 9px; font-size: 30px; line-height: 1.25; font-weight: 750; letter-spacing: -.055em; }
+.header p { font-size: 15px; line-height: 1.55; color: #3e3c55; }
+.features, .space { padding: 12px; border: 1px solid var(--home-line); border-radius: 20px; background: #fff; }
+.illustration { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; background: #f4f3fa; }
+.feature { display: flex; align-items: flex-start; gap: 13px; margin: 0 4px; padding: 15px 0 13px; }
+.feature + .feature { border-top: 1px solid #eeedf4; padding-bottom: 5px; }
+.featureIcon { width: 38px; height: 38px; border-radius: 9px; color: var(--home-accent); background: #f4f2fa; }
+.feature h2, .space h2 { margin: 0 0 4px; font-size: 17px; line-height: 1.35; letter-spacing: -.04em; }
+.feature p, .space p { color: #414059; font-size: 14px; line-height: 1.5; letter-spacing: -.02em; }
+.space { display: grid; gap: 10px; padding: 16px; }
+.actions { display: grid; gap: 12px; margin-top: auto; padding-top: 12px; }
+.actions .primary, .actions .secondary { width: 100%; min-height: 56px; border-radius: 16px; font-size: 16px; font-weight: 700; letter-spacing: -.03em; }
+.actions button > span { display: inline-flex; gap: 9px; align-items: center; justify-content: center; }
+.actions .primary { color: white; background: var(--home-accent); border: 1px solid var(--home-accent); }
+.actions .secondary { color: var(--home-ink); background: #fff; border: 1px solid var(--home-line); }
+.actions .secondary svg { color: var(--home-accent); }

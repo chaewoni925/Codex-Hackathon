@@ -1,0 +1,22 @@
+{
+  "personVisible": false,
+  "coverage": [
+    { "spotId": "s1", "covered": true },
+    { "spotId": "s2", "covered": true },
+    { "spotId": "s3", "covered": true },
+    { "spotId": "s4", "covered": true },
+    { "spotId": "s5", "covered": true },
+    { "spotId": "s6", "covered": true }
+  ],
+  "changes": [
+    {
+      "object": "USB 충전기",
+      "change": "새로 생김",
+      "where": "침대 옆 콘센트",
+      "check": "콘센트 주변에 놓인 충전기를 살펴보고 위치를 기록하세요.",
+      "priority": "높음"
+    }
+  ],
+  "uncertain": [],
+  "note": "메인룸 점검 지점 6곳을 확인했습니다."
+}

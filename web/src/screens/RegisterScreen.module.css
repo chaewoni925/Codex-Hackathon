@@ -1,0 +1,16 @@
+.page { min-height: 100dvh; padding: 20px var(--app-inline-padding) 112px; }
+.content { display: grid; gap: 24px; margin-top: 24px; }
+.field { display: grid; gap: 8px; font-weight: 600; }
+.field input { width: 100%; min-height: 48px; border: 1px solid var(--color-border); border-radius: 12px; padding: 12px; font: inherit; }
+.types { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+.types button, .chips button { min-height: 56px; border: 1px solid var(--color-border); border-radius: 12px; background: #fff; font: inherit; cursor: pointer; }
+.types .active { background: var(--color-point-soft); border-color: var(--color-point); color: var(--color-point); box-shadow: inset 0 0 0 1px var(--color-point); }
+.page fieldset { min-width: 0; border: 0; padding: 0; margin: 0; } .page legend, .zones h2 { margin-bottom: 12px; font-weight: 600; }
+.zones { display: grid; gap: 12px; } .zones h2 { margin: 0; font-size: 16px; }
+.zone { display: grid; gap: 12px; } .thumbnail { width: 100%; max-height: 220px; object-fit: cover; border-radius: 8px; }
+.file { display: none; } .row, .chips { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.chips button { min-height: 40px; padding: 8px 12px; }
+.guide { margin: 0; color: var(--color-text-muted); line-height: 1.6; }
+.person { margin: 0; color: var(--color-danger); line-height: 1.5; }
+.footer { position: fixed; bottom: 0; left: 50%; width: min(100%, var(--app-max-width)); z-index: 8; padding: 12px var(--app-inline-padding) max(20px, env(safe-area-inset-bottom)); background: var(--color-background); transform: translateX(-50%); }
+.footer button { width: 100%; min-height: 54px; } .footer p { margin: 0 0 8px; text-align: center; color: var(--color-text-muted); }

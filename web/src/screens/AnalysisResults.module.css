@@ -1,0 +1,23 @@
+.results { display: grid; gap: 12px; }
+.sectionTitle { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.sectionTitle h2 { font-size: 19px; letter-spacing: -.04em; margin: 0; }
+.sectionTitle > span { color: #373663; font-size: 12px; }
+.finding { display: grid; grid-template-columns: 34px minmax(0,1fr) auto; gap: 12px; align-items: start; padding: 16px; background: white; border: 1px solid #d7d3e6; border-radius: 20px; scroll-margin: 20px; }
+.number, .tag { background: #d9d9ff; color: #262d83; }
+.number { width: 34px; height: 34px; display: grid; place-items: center; border-radius: 50%; font-size: 14px; font-weight: 700; }
+.finding[data-missing="true"] .number, .finding[data-missing="true"] .tag { background: #ffdbd6; color: #ab1b11; }
+.title { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; }
+.title strong { font-size: 16px; letter-spacing: -.04em; }
+.tag { padding: 3px 7px; border-radius: 99px; font-size: 11px; font-weight: 750; white-space: nowrap; }
+.body p, .empty, .notice p { font-size: 14px; line-height: 1.55; margin: 4px 0 0; }
+.details { margin-top: 5px; color: #595571; font-size: 12px; }
+.details summary { cursor: pointer; width: fit-content; }
+.details button, .confirm { cursor: pointer; border: none; border-radius: 9px; background: #f3f1fa; color: #262547; font-weight: 700; font-size: 13px; min-height: 36px; padding: 5px 12px; }
+.details button { margin-top: 6px; }
+.confirm[aria-pressed="true"], .details button[aria-pressed="true"] { background: #30368b; color: white; }
+.analyzing, .notice, .empty { padding: 14px; background: white; border: 1px solid #d7d3e6; border-radius: 16px; }
+.analyzing { display: flex; align-items: center; gap: 10px; }
+.analyzing span { width: 16px; height: 16px; border: 2px solid #d9d9ff; border-top-color: #292e85; border-radius: 50%; animation: spin .9s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.notice { display: grid; gap: 8px; color: #713a20; background: #fff5ee; }
+@media (max-width: 350px) { .finding { gap: 7px; padding: 12px; } }
