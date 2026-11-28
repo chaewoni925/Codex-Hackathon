@@ -1,0 +1,79 @@
+{
+  "id": "sample-space",
+  "type": "숙소",
+  "name": "성수 파티룸",
+  "zones": [
+    {
+      "id": "main",
+      "name": "메인룸",
+      "baselinePhoto": ""
+    },
+    {
+      "id": "bath",
+      "name": "욕실",
+      "baselinePhoto": ""
+    }
+  ],
+  "route": [
+    {
+      "order": 1,
+      "zoneId": "main",
+      "spotId": "sample-1",
+      "object": "협탁",
+      "where": "침대 오른쪽",
+      "reason": "기준 사진에 보이는 지점이에요.",
+      "check": "같은 위치에서 물건과 주변을 확인하세요.",
+      "priority": "높음"
+    },
+    {
+      "order": 2,
+      "zoneId": "main",
+      "spotId": "sample-2",
+      "object": "스탠드 조명",
+      "where": "협탁 위",
+      "reason": "기준 사진에 보이는 지점이에요.",
+      "check": "같은 위치에서 물건과 주변을 확인하세요.",
+      "priority": "보통"
+    },
+    {
+      "order": 3,
+      "zoneId": "main",
+      "spotId": "sample-3",
+      "object": "의자",
+      "where": "침대 왼쪽",
+      "reason": "기준 사진에 보이는 지점이에요.",
+      "check": "같은 위치에서 물건과 주변을 확인하세요.",
+      "priority": "보통"
+    },
+    {
+      "order": 4,
+      "zoneId": "bath",
+      "spotId": "sample-4",
+      "object": "환풍구",
+      "where": "욕실 천장 중앙",
+      "reason": "기준 사진에 보이는 지점이에요.",
+      "check": "같은 위치에서 물건과 주변을 확인하세요.",
+      "priority": "높음"
+    },
+    {
+      "order": 5,
+      "zoneId": "bath",
+      "spotId": "sample-5",
+      "object": "매립 조명",
+      "where": "천장 양쪽",
+      "reason": "기준 사진에 보이는 지점이에요.",
+      "check": "같은 위치에서 물건과 주변을 확인하세요.",
+      "priority": "보통"
+    },
+    {
+      "order": 6,
+      "zoneId": "bath",
+      "spotId": "sample-6",
+      "object": "수건 선반",
+      "where": "오른쪽 벽",
+      "reason": "기준 사진에 보이는 지점이에요.",
+      "check": "같은 위치에서 물건과 주변을 확인하세요.",
+      "priority": "보통"
+    }
+  ]
+}

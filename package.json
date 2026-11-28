@@ -4,12 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "concurrently --kill-others --names web,api \"npm:dev:web\" \"npm:dev:api\"",
-    "dev:web": "vite",
+    "dev:web": "vite --config vite.config.ts",
     "dev:api": "node server/index.js",
     "start": "node server/index.js",
-    "vision:check": "node test-vision.mjs",
-    "build": "tsc --noEmit && vite build",
-    "test": "vitest run"
+    "vision:check": "node ai/test-vision.mjs",
+    "build": "tsc --noEmit && vite build --config vite.config.ts",
+    "test": "vitest run --config vite.config.ts"
   },
   "dependencies": {
     "dotenv": "^16.4.7",
